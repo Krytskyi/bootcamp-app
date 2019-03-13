@@ -4,13 +4,12 @@
       Search
       <input matInput type="text" [(ngModel)]="searchQuery">
     </mat-form-field>
-    <mat-icon (click)="openAddNewProduct()" class="pointer">add_box</mat-icon>
+    <mat-icon (click)="openAddNewProduct()" *ngIf="isAdmin" class="pointer">add_box</mat-icon>
   </div>
 
   <div fxLayout="row wrap" fxLayoutGap="20px grid" fxLayoutAlign="flex-start center">
     <div fxFlex="0 1 33.3%" fxLayout="column" fxLayoutAlign="center"
-          *ngFor="let product of products | filter: searchQuery: 'name'"
-          [ngClass]="{ 'hidden': product.isHidden }">
+      *ngFor="let product of products | filter: searchQuery: 'name'" [ngClass]="{ 'hidden': product.isHidden && !isAdmin}">
       <boot-product-item [product]="product"></boot-product-item>
     </div>
   </div>

@@ -13,6 +13,7 @@ export class ProductDetailsResolver implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot): Promise<ProductItemModel> {
     return this.productsService.getProduct(route.params.productId).toPromise()
     .then((product: ProductItemModel) => {
+        console.log("from resolver")
         return product;
     })
   }

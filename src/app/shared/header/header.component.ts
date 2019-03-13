@@ -37,6 +37,6 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.authService.setIsLoggedIn(false);
     sessionStorage.clear();
-    this.router.navigate(['']);
+    this.goToAuth();
   }
 }

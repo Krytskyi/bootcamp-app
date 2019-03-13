@@ -11,7 +11,7 @@
       {{ product.description }}
     </p>
   </mat-card-content>
-  <mat-card-actions fxLayoutAlign="space-between">
+  <mat-card-actions fxLayoutAlign="space-between" *ngIf="isAdmin">
     <button mat-raised-button color="primary" (click)="clone($event)">Clone</button>
     <button mat-raised-button color="warn" (click)="deleteItem($event)">Delete</button>
   </mat-card-actions>

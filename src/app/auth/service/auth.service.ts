@@ -37,4 +37,13 @@ export class AuthService {
     if(sessionStorage.getItem('user'))
       this.isLoggenIn.next(true);
   }
+
+  isAdmin(): boolean{
+    const user = this.getUser();
+    return user && user.role === 'admin';
+  }
+
+  getUser(): any {
+    return JSON.parse(sessionStorage.getItem('user'));
+  }
 }

@@ -1,2 +1,5 @@
 <boot-header [menuItems]="headerItems" [isLoggedIn]="isLoggedIn"></boot-header>
+<div class="spinner" *ngIf="showSpinner">
+    <mat-spinner></mat-spinner>
+</div>
 <router-outlet></router-outlet>
