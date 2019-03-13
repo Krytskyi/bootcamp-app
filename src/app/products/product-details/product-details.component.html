@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center" *ngIf="!isEditMode">
+  <mat-card class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ product?.name }}</mat-card-title>
+      <mat-card-subtitle>Price: {{ product?.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <div *ngIf="product?.imgUrl" class="product-card-img">
+      <img mat-card-image [src]="product?.imgUrl" alt="{{product?.name}}">
+    </div>
+    <mat-card-content>
+      <p class="product-card-content">
+        {{ product.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between">
+      <button mat-raised-button color="accent" (click)="editModeOn()">Edit</button>
+      <button mat-raised-button color="primary" (click)="clone()">Clone</button>
+      <button mat-raised-button color="warn" (click)="deleteItem($event)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" *ngIf="isEditMode">
+  <mat-card class="product-card">
+    <boot-product-form [product]="product"></boot-product-form>
+    <div mat-dialog-actions fxLayoutAlign="space-between">
+      <button mat-raised-button (click)="editModeOff()">Cancel</button>
+      <button mat-raised-button color="primary" (click)="update()">Save</button>
+    </div>
+  </mat-card>
+</div>

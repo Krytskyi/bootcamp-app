@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Add new product</h1>
+<div mat-dialog-content>
+  <boot-product-form [product]="data"></boot-product-form>
+</div>
+<div mat-dialog-actions fxLayoutAlign="space-between">
+  <button mat-raised-button (click)="close()">No Thanks</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" (click)="create()" cdkFocusInitial>Ok</button>
+</div>

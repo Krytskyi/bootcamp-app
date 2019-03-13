@@ -1,0 +1,37 @@
+[
+    {
+        "label": "Main",
+        "alias": "",
+        "subItems": []
+    },
+    {
+        "label": "Products",
+        "alias": "products",
+        "subItems": [
+            {
+                "label": "All Categories",
+                "alias": "products/all"
+            },
+            {
+                "label": "BMW",
+                "alias": "products/bmw"
+            },
+            {
+                "label": "Mercedes",
+                "alias": "products/mercedes"
+            },
+            {
+                "label": "Zhyguli",
+                "alias": "products/zhyguli"
+            },
+            {
+                "label": "Audi",
+                "alias": "products/audi"
+            },
+            {
+                "label": "Toyota",
+                "alias": "products/toyota"
+            }
+        ]
+    }
+]

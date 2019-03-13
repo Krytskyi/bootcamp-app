@@ -1,0 +1,21 @@
+<mat-toolbar class="toolbar" color="accent">
+  <span class="logo">Ng Bootcamp</span>
+
+  <div class="menu-items">
+    <ng-container *ngIf="isLoggedIn">
+      <button mat-button *ngFor="let item of menuItems" [matMenuTriggerFor]="subItems" (click)="selectItem(item)">
+        {{item.label}}
+        <mat-icon *ngIf="item.subItems.length">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #subItems="matMenu" (closed)="dropdownItems = []">
+        <button mat-menu-item *ngFor="let item of dropdownItems" (click)="selectItem(item)">
+          {{item.label}}
+        </button>
+      </mat-menu>
+      <button mat-button (click)="logout()">Log Out</button>
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn">
+        <button mat-button (click)="goToAuth()">Login</button>
+      </ng-container>
+  </div>
+</mat-toolbar>

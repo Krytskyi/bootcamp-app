@@ -1,0 +1,24 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+  <div fxLayout="column" fxLayoutAlign="center">
+    <mat-form-field>
+      <input placeholder="Name" type="text" matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea cdkTextareaAutosize cdkAutosizeMinRows="3" cdkAutosizeMaxRows="3" placeholder="Description" type="text" matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Price" type="number" matInput formControlName="price">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Category" formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category.label">
+          {{ category.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Picture URL" type="text" matInput formControlName="imgUrl">
+    </mat-form-field>
+    <mat-checkbox formControlName="isHidden">Is product hidden</mat-checkbox>
+  </div>
+</form>
