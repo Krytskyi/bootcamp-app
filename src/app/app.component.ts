@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderService } from '@shared/services/header.service';
 import { AuthService } from './auth/service/auth.service';
 import { Subscription } from 'rxjs';

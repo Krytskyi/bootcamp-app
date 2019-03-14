@@ -1,3 +1,9 @@
+<div *ngFor="let i of arr">
+  <span>{{i}}</span>
+</div>
+<button (click)="add()">Click</button>
+{{product.name}}
+
 <form [formGroup]="form" novalidate autocomplete="off">
   <div fxLayout="column" fxLayoutAlign="center">
     <mat-form-field>
